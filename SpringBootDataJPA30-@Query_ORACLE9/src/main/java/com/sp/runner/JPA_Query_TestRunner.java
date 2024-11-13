@@ -43,14 +43,21 @@ public class JPA_Query_TestRunner implements CommandLineRunner {
 		System.out.println("**************************************");
 
 		// Show Unqie Hotel Number
-		System.out.println("Uniqe Hotel Count:: " + iHotel_Info_Repository.showUniqeHotelCount());
+//		System.out.println("Uniqe Hotel Count:: " + iHotel_Info_Repository.showUniqeHotelCount());
+//
+//		System.out.println("**************************************");
+//		System.out.println("**************************************");
+//		System.out.println("**************************************");
+//		System.out.println("**************************************");
+//		// Show Total Hotel Number
+//		System.out.println("Total Hotel Count::" + iHotel_Info_Repository.showTotalHotelCount());
 
+		// Deleted Data
 		System.out.println("**************************************");
 		System.out.println("**************************************");
 		System.out.println("**************************************");
 		System.out.println("**************************************");
-		// Show Total Hotel Number
-		System.out.println("Total Hotel Count::" + iHotel_Info_Repository.showTotalHotelCount());
-		;
+		int count = iHotel_Info_Repository.deleteHotelByAddr("BAM");
+		System.out.println("Total Deleted Hotel Number: " + count);
 	}
 }

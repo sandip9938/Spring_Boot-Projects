@@ -2,9 +2,12 @@ package com.sp.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.sp.entity.Hotel;
+
+import jakarta.transaction.Transactional;
 
 public interface IHotel_Info_Repository extends JpaRepository<Hotel, Integer> {
 
@@ -27,4 +30,9 @@ public interface IHotel_Info_Repository extends JpaRepository<Hotel, Integer> {
 
 	@Query("select count(*) from Hotel") // Here All Hotel name count
 	public List<Hotel> showTotalHotelCount();
+
+	@Modifying
+	@Transactional
+	@Query("Delete Hotel Where hotelAddr=?1")
+	public int deleteHotelByAddr(String Addr);
 }
