@@ -1,5 +1,7 @@
 package com.sp.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sp.entity.JobSeeker;
@@ -15,6 +17,11 @@ public class JobSeekerMngmtService implements IJobSeekertMngmtService {
 	public String jobSeekerRegister(JobSeeker jobSeeker) {
 		int jobid = iJobSeekertRepostionry.save(jobSeeker).getJobId();
 		return "JobSeeker is registered with Id Value: " + jobid;
+	}
+
+	@Override
+	public Optional<JobSeeker> showByJobHolderDetailsById(int id) {
+		return iJobSeekertRepostionry.findById(id);
 	}
 
 }
