@@ -1,7 +1,5 @@
 package com.sp.service;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +21,11 @@ public class Prsonal_Info_MngmtService implements IPresonal_Info_MngmtService {
 	@Override
 	public Iterable<PersonalInfo> showAllPersonalInfo() {
 		return iPersonal_InfoRepostionry.findAll();
+	}
+
+	@Override
+	public float getAgeById(int id) {
+		return iPersonal_InfoRepostionry.ageCalulate(id);
 	}
 
 }

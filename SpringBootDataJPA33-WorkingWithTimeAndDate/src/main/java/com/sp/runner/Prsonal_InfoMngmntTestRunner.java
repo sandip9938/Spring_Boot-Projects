@@ -24,12 +24,12 @@ public class Prsonal_InfoMngmntTestRunner implements CommandLineRunner {
 
 		try {
 			// Correcting the LocalDateTime.of() syntax
-			LocalDate dateOfBirth = LocalDate.of(2002, 7, 18);
-			LocalTime meetingTime = LocalTime.of(10, 30);
-			LocalDateTime futureMeeting = LocalDateTime.of(2026, 1, 20, 13, 30);
+			LocalDate dateOfBirth = LocalDate.of(2010, 7, 18);
+			LocalTime meetingTime = LocalTime.of(19, 30);
+			LocalDateTime futureMeeting = LocalDateTime.of(2016, 1, 20, 13, 30);
 
 			// Creating a PersonalInfo object with corrected parameters
-			PersonalInfo personalInfo = new PersonalInfo("Sambit", "9337318660", "Hyderabad", dateOfBirth, meetingTime,
+			PersonalInfo personalInfo = new PersonalInfo("Siraj", "9337318660", "Hyderabad", dateOfBirth, meetingTime,
 					futureMeeting);
 
 			// Optional: Save or log the object using the service
@@ -39,7 +39,10 @@ public class Prsonal_InfoMngmntTestRunner implements CommandLineRunner {
 			System.err.println("Error while creating PersonalInfo: " + e.getMessage());
 			e.printStackTrace();
 		}
-
+		System.out.println("********************************");
+		System.out.println("********************************");
+		System.out.println("********************************");
+		System.out.println("********************************");
 		// Show Data
 
 		try {
@@ -47,5 +50,19 @@ public class Prsonal_InfoMngmntTestRunner implements CommandLineRunner {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		System.out.println("********************************");
+		System.out.println("********************************");
+		System.out.println("********************************");
+		System.out.println("********************************");
+		// Show Total age by id
+
+		try {
+			System.out.println("Person age is : " + prsonal_Info_MngmtService.getAgeById(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
+
 }

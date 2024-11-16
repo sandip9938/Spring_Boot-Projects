@@ -8,4 +8,6 @@ public interface IPresonal_Info_MngmtService {
 
 	public Iterable<PersonalInfo> showAllPersonalInfo();
 
+	public float getAgeById(int id);
+
 }
